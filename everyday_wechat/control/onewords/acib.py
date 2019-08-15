@@ -9,6 +9,9 @@ from everyday_wechat.utils.common import (
     is_json
 )
 
+__all__ = ['get_acib_info']
+
+
 def get_acib_info():
     """
     从词霸中获取每日一句，带英文。
@@ -26,5 +29,7 @@ def get_acib_info():
         print('没有获取到格言数据。')
     except requests.exceptions.RequestException as exception:
         print(exception)
+    return None
+
 
 get_one_words = get_acib_info
