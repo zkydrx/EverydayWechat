@@ -72,7 +72,7 @@ def is_online(auto_login=False):
     hotReload = not config.get('is_forced_switch', False)  # 切换微信号，重新扫码。
     loginCallback = init_data
     exitCallback = exit_msg
-    for _ in range(2):  # 尝试登录 2 次。
+    for _ in range(10):  # 尝试登录 2 次。
         if platform.system() in ('Windows', 'Darwin'):
             itchat.auto_login(hotReload=hotReload,
                               loginCallback=loginCallback, exitCallback=exitCallback)
@@ -164,7 +164,7 @@ def exit_msg():
 
 
 if __name__ == '__main__':
-    # run()
+    run()
     pass
-    # config.init()
+    config.init()
     # init_wechat()
